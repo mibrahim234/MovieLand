@@ -34,7 +34,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(require('./controllers/'));
 app.get('/', (req, res) => {
  res.render('home')
-})
+});
+
+app.get('/login', (req, res) => {
+  res.render('login_page')
+});
 
 // turn on connection to db and server
 // method to establish the connection to the database. 
