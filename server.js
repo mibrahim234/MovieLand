@@ -7,6 +7,7 @@ require('dotenv').config()
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//NEED FOR DATABASE CONNECTION
 // const sequelize = require('./config/connection');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -16,9 +17,10 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-//   store: new SequelizeStore({
-//     db: sequelize
-//   })
+  //NEED FOR DATABASE CONNECTION
+/*   store: new SequelizeStore({
+    db: sequelize
+   }) */
 };
 
 app.use(session(sess));
@@ -31,19 +33,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(require('./controllers/'));
-app.get('/', (req, res) => {
- res.render('home')
-});
+//NEED FOR DATABASE CONNECTION
+//app.use(require('./controllers/'));
 
-app.get('/login', (req, res) => {
-  res.render('login_page')
-});
+app.get('/', (req, res) => {
+ res.render('homepage')
+})
 
 // turn on connection to db and server
 // method to establish the connection to the database. 
 //The "sync" part means that this is Sequelize taking the models and connecting them to associated database tables. 
 // If it doesn't find a table, it'll create it for you!
+
+
+
+//NEED FOR DATABASE CONNECTION
 // sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 // });
