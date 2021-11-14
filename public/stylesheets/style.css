@@ -1,11 +1,46 @@
-body {
-    background-color: blue;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-header {
+:root {
+    --yellow: #fce138;
+    --blue: #024e76;
+    --lblue: #39a6b2;
+    --white: #fff;
+  }
+
+body {
+    background-image: url(../assets/movie1.jpg);
+    background-color: var(--blue);
+    background-size: cover;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    margin:0px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 25px;
+ }
+
+ .title {
+    position: absolute; top: 10px; left: 10px;
+ }
+
+ .logs {
+    position: absolute; top: 10px; right: 10px;
+ }
+
+/* header {
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
-  }
+  } */

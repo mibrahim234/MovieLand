@@ -40,6 +40,14 @@ app.get('/', (req, res) => {
  res.render('homepage')
 })
 
+app.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  
+  res.render('login');
+});
 // turn on connection to db and server
 // method to establish the connection to the database. 
 //The "sync" part means that this is Sequelize taking the models and connecting them to associated database tables. 
