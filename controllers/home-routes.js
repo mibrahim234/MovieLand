@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
     
     res.render('login');
   });
+
+  router.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+  });
+
+  // router.get('/dashboard', (req, res) => {
+  //   if (req.session.loggedIn) {
+  //     res.redirect('/dashboard');
+  //     return;
+  //   }
+
+  //   res.render('dashboard');
+  // });
   
   module.exports = router;
-
