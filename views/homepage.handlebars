@@ -1,5 +1,47 @@
 <body>
-    <div class="container mt-6 has-text-white">
+  
+    <div class="intro">
+        <h1 class="text-center">Find A Movie</h1>
+       <h1 class="text-center">Leave A Review</h1> 
+    </div>
+
+<section>
+  <div class="hero-body">
+    <div class="searchbar container mt-6">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-5-desktop is-5-widescreen">
+          <form action="" class="box">
+             <div class="field">
+              <label for="username-signup" class="label"></label>
+              <div class="control has-icons-left">
+        <input class="input" id="username-signup" type="text" placeholder="Search For a Movie">
+                <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+                </span>
+              </div>
+            </div>
+            {{!-- 
+            --SUBMIT BUTTON--IF NEEDED 
+            <div class="field">
+              <button type="submit" class="button is-info">
+                Search
+              </button>
+            </div> --}}
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+ <div class="container">
+      <div id="movies" class="row"></div>
+    </div> 
+
+</body>
+</html>
+
+  {{!-- <div class="container mt-6 has-text-white">
       <div class="columns is-centered">
         <div class="column is-4-tablet is-4-desktop is-5-widescreen">
     <div class="intro">
@@ -15,6 +57,4 @@
 
      </div>
       </div>
-       </div>
-</body>
-</html>
+       </div> --}}

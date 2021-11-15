@@ -48,6 +48,19 @@ nav  {
     font-size: 25px;
 }
 
+h1 {
+    color: #05010b;
+}
+.input-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#searchText {
+    margin: 0 0.5rem 0 0.5 rem;
+    width: 100%;
+}
+
 .selection-lists {
     position: relative; top: 100px;
     display: flex;
