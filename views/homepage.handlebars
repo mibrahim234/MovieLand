@@ -10,23 +10,21 @@
           <div class="intro">
         <h1 class="text-center">Find A Movie</h1>
        <h1 class="text-center">Leave A Review</h1> 
-          <form action="" class="box">
+          <form action="" class="box" id="user-form">
              <div class="field">
               <label for="username-signup" class="label"></label>
               <div class="control has-icons-left">
-        <input class="input" id="username-signup" type="text" placeholder="Search For a Movie">
+        <input class="input" name="movie-search" id="movie-search" type="text" autofocus="true" placeholder="Search For a Movie">
                 <span class="icon is-small is-left">
               <i class="fas fa-search"></i>
                 </span>
               </div>
             </div>
-            {{!-- 
-            --SUBMIT BUTTON--IF NEEDED 
-            <div class="field">
-              <button type="submit" class="button is-info">
+              <div class="field">
+              <button type="submit" class="btn button is-info">
                 Search
               </button>
-            </div> --}}
+            </div>
           </form>
         </div>
       </div>
@@ -38,7 +36,7 @@
 
  
  <div class="container">
-      <div id="movies" class="row"></div>
+      <div id="movie-container-one" class="row"></div>
     </div> 
 
 </body>
