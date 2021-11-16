@@ -81,6 +81,12 @@ h1 {
     color: black;
 }
 
+.movie-search-results {
+    position: relative; top: 100px;
+    background-color: #fff;
+    color: black;
+}
+
 /* header {
     border-bottom: 1px solid #ccc;
     display: flex;
