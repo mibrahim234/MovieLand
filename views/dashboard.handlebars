@@ -1,4 +1,4 @@
-<div class="movie-container">
+{{!-- <div class="movie-container">
         <div class="row">
           <div class="col border-bottom">
            <div>
@@ -16,9 +16,6 @@
       </div>
 
 
-<section class="new-post">
-  <h2>Create New Post</h2>
-
   <form class="new-post-form">
     <div>
       <label for="post-title">Title</label>
@@ -30,8 +27,36 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section>
+</section> --}}
 
+<section class="new-post">
+  <div class="hero-body">
+    <div class="post-form container mt-6">
+      <div class="columns is-centered">
+        <div class="column is-4-tablet is-4-desktop is-5-widescreen">
+  <form class="box new-post-form">
+  <div class="field">
+      <h1><b>Create New Post</b></h1>
+    <label class="label">Title</label>
+    <div class="control">
+      <input class="input" type="text" id="post-title" name="post-title" placeholder="Enter a title">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Review</label>
+    <div class="control">
+      <textarea class="textarea" class="input" id="post-url" name="post-url" placeholder="This movie is amazing!"></textarea>
+    </div>
+  </div>
+
+  <button class="button is-info">Create</button>
+</form>
+ </div>
+  </div>
+   </div>
+  </div>
+  
 {{#if posts.length}}
 <section class="your-posts">
   <h2>Your Posts</h2>
@@ -48,3 +73,4 @@
 
 <script src="/javascript/omdb.js"></script>
 {{!-- <script src="/javascript/add-post.js"></script> NEED TO IMPORT THIS SHEET STILL--}} 
+{{!-- nice post man! --}}
