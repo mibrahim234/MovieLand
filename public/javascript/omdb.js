@@ -1,7 +1,6 @@
 var userFormEl = document.querySelector("#user-form");
 var movieSearchInputEl = document.querySelector("#movie-search");
 
-// var moviePosterOneEl = document.querySelector("movie-poster-one"); DO WE NEED THIS?
 var movieContainerOneEl = document.querySelector("#movie-container-one");
 var movieContainerTwoEl = document.querySelector("#movie-container-two");
 var movieContainerThreeEl = document.querySelector("#movie-container-three");
@@ -176,8 +175,8 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 
 document.addEventListener("click", function(event) {
     if (event.target.classList.value === "movie-poster") {
-        console.log(e)
-        //const id = event.target.dataset.id
+        console.log(event)
+        const id = event.target.dataset.id
         // navigate to /movie/:id
         window.location.replace("/movie/" + id)
 

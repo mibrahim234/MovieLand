@@ -50,6 +50,15 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
+app.get('/dashboard', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('dashboard');
+});
+
 app.get("/search/:searchTerm", (req, res) => {
   const searchTerm = req.params.searchTerm
   //query OMDB by the search term with axios
@@ -76,14 +85,6 @@ app.get("/movie/:id", (req, res) => {
   res.status(200).json({})
 })
 
-app.get('/dashboard', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/dashboard');
-    return;
-  }
-
-  res.render('dashboard');
-});
 
 // turn on connection to db and server
 // method to establish the connection to the database. 
