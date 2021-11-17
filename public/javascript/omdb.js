@@ -52,7 +52,7 @@ var getMovieData = function(movie) {
         var movieYear1 = document.createElement("h4");
         movieYear1.textContent = "Year: " + response.Search[0].Year
         movieContainerOneEl.appendChild(movieYear1);
-
+        
         // MOVIE TWO
         var movieTitle2 = document.createElement("h4");
         movieTitle2.textContent = "Title: " + response.Search[1].Title

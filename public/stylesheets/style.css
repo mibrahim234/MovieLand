@@ -52,45 +52,33 @@ h1 {
     color: #00008b;
     font-size: large;
 }
-.input-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-#searchText {
-    margin: 0 0.5rem 0 0.5 rem;
-    width: 100%;
-}
 
+/* puts in colomns of 3
+each movie in its own box */
+.movie-container {
+    background-color: gray;
+} 
+/* position: relative; top: 100px; left: 50px; */
+
+/* --MOVIE SEARCH RESULTS-- */
+.movie-search-results {
+    color: black;
+}  
+
+/* --FOR THE DASHBOARD--
+.new-post {
+    position: relative; top: 200px; left: 15px;
+    color: black;
+} */
+
+
+
+/* --WHAT DOES THIS DO?--
 .selection-lists {
     position: relative; top: 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     color: black;
-}
-
-.movie-container {
-    position: relative; top: 100px; left: 50px;
-    color: black;
-}
-
-
-.new-post {
-    position: relative; top: 200px; left: 15px;
-    color: black;
-}
-
-.movie-search-results {
-    position: relative; top: 100px;
-    background-color: #fff;
-    color: black;
-}
-
-/* header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  } */
+} 
+ */
