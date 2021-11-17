@@ -45,9 +45,16 @@ var getMovieData = function(movie) {
         // img.src = response.Search[0].Poster
         // movieContainerOneEl.appendChild(moviePoster);
 
+        
+        
         var movieTitle1 = document.createElement("h4");
+        var moviePoster1 = document.createElement("img");
+        moviePoster1.setAttribute("src", response.Search[0].Poster)
+        moviePoster1.className = "movie-poster"
+        moviePoster1.setAttribute("data-id", response.Search[0].imdbID)
         movieTitle1.textContent = "Title: " + response.Search[0].Title
         movieContainerOneEl.appendChild(movieTitle1);
+        movieContainerOneEl.appendChild(moviePoster1);
 
         var movieYear1 = document.createElement("h4");
         movieYear1.textContent = "Year: " + response.Search[0].Year
@@ -194,3 +201,16 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 // };
 
 // getMovieData();
+
+document.addEventListener("click", function(event) {
+    if (event.target.classList.value === "movie-poster") {
+        console.log(e)
+        //const id = event.target.dataset.id
+        // navigate to /movie/:id
+        window.location.replace("/movie/" + id)
+
+        // On our backend, we set up that dynamic route for /movie/:id
+        // Make an API request to OMDB querying by req.params.id
+        // Fill in a Handlebars template with data returned
+    }
+})

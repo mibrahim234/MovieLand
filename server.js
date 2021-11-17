@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 require('dotenv').config()
+const axios = require("axios")
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -48,6 +49,32 @@ app.get('/login', (req, res) => {
   
   res.render('login');
 });
+
+app.get("/search/:searchTerm", (req, res) => {
+  const searchTerm = req.params.searchTerm
+  //query OMDB by the search term with axios
+  // take the response and pass it into a Handlebars template
+  // The template will either need to use a partial for each movie
+  // Or you can use an each loop in the template
+  // const dataObj = {movieList: ARRAY FROM RESPONSE}
+  // res.render("SEARCHTEMPLATE", dataObj)
+})
+
+app.get("/movie/:id", (req, res) => {
+  const imdbID = req.params.id
+
+  axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
+  .then(response => {
+    console.log(response)
+    const data = response.data
+    const dataObj = {
+      title: data.Title,
+      year: data.Year
+    }
+    res.render("MOVIETEMPLATE", dataObj)
+  })
+  res.status(200).json({})
+})
 
 app.get('/dashboard', (req, res) => {
   if (req.session.loggedIn) {
