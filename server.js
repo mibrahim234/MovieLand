@@ -1,5 +1,7 @@
-const path = require('path');
 const express = require('express');
+const routes = require('./routes');
+
+const path = require('path');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 require('dotenv').config()
@@ -8,8 +10,8 @@ const axios = require("axios")
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//NEED FOR DATABASE CONNECTION
-// const sequelize = require('./config/connection');
+// NEED FOR DATABASE CONNECTION
+const sequelize = require('./config/connection');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // what is this for
@@ -36,54 +38,55 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //NEED FOR DATABASE CONNECTION
 //app.use(require('./controllers/'));
+app.use(routes);
 
-app.get('/', (req, res) => {
- res.render('homepage')
-})
+// app.get('/', (req, res) => {
+//  res.render('homepage')
+// })
 
-app.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
+// app.get('/login', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/');
+//     return;
+//   }
   
-  res.render('login');
-});
+//   res.render('login');
+// });
 
-app.get('/dashboard', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/dashboard');
-    return;
-  }
+// app.get('/dashboard', (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect('/dashboard');
+//     return;
+//   }
 
-  res.render('dashboard');
-});
+//   res.render('dashboard');
+// });
 
-app.get("/search/:searchTerm", (req, res) => {
-  const searchTerm = req.params.searchTerm
-  //query OMDB by the search term with axios
-  // take the response and pass it into a Handlebars template
-  // The template will either need to use a partial for each movie
-  // Or you can use an each loop in the template
-  // const dataObj = {movieList: ARRAY FROM RESPONSE}
-  // res.render("SEARCHTEMPLATE", dataObj)
-})
+// app.get("/search/:searchTerm", (req, res) => {
+//   const searchTerm = req.params.searchTerm
+//   //query OMDB by the search term with axios
+//   // take the response and pass it into a Handlebars template
+//   // The template will either need to use a partial for each movie
+//   // Or you can use an each loop in the template
+//   // const dataObj = {movieList: ARRAY FROM RESPONSE}
+//   // res.render("SEARCHTEMPLATE", dataObj)
+// })
 
-app.get("/movie/:id", (req, res) => {
-  const imdbID = req.params.id
+// app.get("/movie/:id", (req, res) => {
+//   const imdbID = req.params.id
 
-  axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
-  .then(response => {
-    console.log(response)
-    const data = response.data
-    const dataObj = {
-      title: data.Title,
-      year: data.Year
-    }
-    res.render("MOVIETEMPLATE", dataObj)
-  })
-  res.status(200).json({})
-})
+//   axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
+//   .then(response => {
+//     console.log(response)
+//     const data = response.data
+//     const dataObj = {
+//       title: data.Title,
+//       year: data.Year
+//     }
+//     res.render("MOVIETEMPLATE", dataObj)
+//   })
+//   res.status(200).json({})
+// })
 
 
 // turn on connection to db and server
@@ -93,10 +96,10 @@ app.get("/movie/:id", (req, res) => {
 
 
 
-//NEED FOR DATABASE CONNECTION
-// sequelize.sync({ force: false }).then(() => {
+// NEED FOR DATABASE CONNECTION
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
-// });
+});
 
 
 
