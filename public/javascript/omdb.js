@@ -38,99 +38,71 @@ var getMovieData = function(movie) {
         .then(function(response) {
         // pass response into dom function
 
-        // MOVIE ONE
-
-        // NEED HELP GETTING POSTER INTO DOM
-        // var moviePoster = document.createElement("img");
-        // img.src = response.Search[0].Poster
-        // movieContainerOneEl.appendChild(moviePoster);
-
-        
-        
-        var movieTitle1 = document.createElement("h4");
+        // MOVIE ONE       
         var moviePoster1 = document.createElement("img");
         moviePoster1.setAttribute("src", response.Search[0].Poster)
         moviePoster1.className = "movie-poster"
         moviePoster1.setAttribute("data-id", response.Search[0].imdbID)
-        movieTitle1.textContent = "Title: " + response.Search[0].Title
-        movieContainerOneEl.appendChild(movieTitle1);
         movieContainerOneEl.appendChild(moviePoster1);
 
-        var movieYear1 = document.createElement("h4");
-        movieYear1.textContent = "Year: " + response.Search[0].Year
-        movieContainerOneEl.appendChild(movieYear1);
-        
+       
         // MOVIE TWO
-        var movieTitle2 = document.createElement("h4");
-        movieTitle2.textContent = "Title: " + response.Search[1].Title
-        movieContainerTwoEl.appendChild(movieTitle2);
+        var moviePoster2 = document.createElement("img");
+        moviePoster2.setAttribute("src", response.Search[1].Poster)
+        moviePoster2.className = "movie-poster"
+        moviePoster2.setAttribute("data-id", response.Search[1].imdbID)
+        movieContainerTwoEl.appendChild(moviePoster2);
 
-        var movieYear2 = document.createElement("h4");
-        movieYear2.textContent = "Year: " + response.Search[1].Year
-        movieContainerTwoEl.appendChild(movieYear2);
 
         // MOVIE THREE
-        var movieTitle3 = document.createElement("h4");
-        movieTitle3.textContent = "Title: " + response.Search[2].Title
-        movieContainerThreeEl.appendChild(movieTitle3);
+        var moviePoster3 = document.createElement("img");
+        moviePoster3.setAttribute("src", response.Search[2].Poster)
+        moviePoster3.className = "movie-poster"
+        moviePoster3.setAttribute("data-id", response.Search[2].imdbID)
+        movieContainerThreeEl.appendChild(moviePoster3);
 
-        var movieYear3 = document.createElement("h4");
-        movieYear3.textContent = "Year: " + response.Search[2].Year
-        movieContainerThreeEl.appendChild(movieYear3);
 
         // MOVIE FOUR
-        var movieTitle4 = document.createElement("h4");
-        movieTitle4.textContent = "Title: " + response.Search[3].Title
-        movieContainerFourEl.appendChild(movieTitle4);
-
-        var movieYear4 = document.createElement("h4");
-        movieYear4.textContent = "Year: " + response.Search[3].Year
-        movieContainerFourEl.appendChild(movieYear4);
+        var moviePoster4 = document.createElement("img");
+        moviePoster4.setAttribute("src", response.Search[3].Poster)
+        moviePoster4.className = "movie-poster"
+        moviePoster4.setAttribute("data-id", response.Search[3].imdbID)
+        movieContainerFourEl.appendChild(moviePoster4);
 
         // MOVIE Five
-        var movieTitle5 = document.createElement("h4");
-        movieTitle5.textContent = "Title: " + response.Search[4].Title
-        movieContainerFiveEl.appendChild(movieTitle5);
-
-        var movieYear5 = document.createElement("h4");
-        movieYear5.textContent = "Year: " + response.Search[4].Year
-        movieContainerFiveEl.appendChild(movieYear5);
+        var moviePoster5 = document.createElement("img");
+        moviePoster5.setAttribute("src", response.Search[4].Poster)
+        moviePoster5.className = "movie-poster"
+        moviePoster5.setAttribute("data-id", response.Search[4].imdbID)
+        movieContainerFiveEl.appendChild(moviePoster5);
 
         // MOVIE Six
-        var movieTitle6 = document.createElement("h4");
-        movieTitle6.textContent = "Title: " + response.Search[5].Title
-        movieContainerSixEl.appendChild(movieTitle6);
-
-        var movieYear6 = document.createElement("h4");
-        movieYear6.textContent = "Year: " + response.Search[5].Year
-        movieContainerSixEl.appendChild(movieYear6);
+        var moviePoster6 = document.createElement("img");
+        moviePoster6.setAttribute("src", response.Search[5].Poster)
+        moviePoster6.className = "movie-poster"
+        moviePoster6.setAttribute("data-id", response.Search[5].imdbID)
+        movieContainerSixEl.appendChild(moviePoster6);
 
         // MOVIE Seven
-        var movieTitle7 = document.createElement("h4");
-        movieTitle7.textContent = "Title: " + response.Search[6].Title
-        movieContainerSevenEl.appendChild(movieTitle7);
-
-        var movieYear7 = document.createElement("h4");
-        movieYear7.textContent = "Year: " + response.Search[6].Year
-        movieContainerSevenEl.appendChild(movieYear7);  
+        var moviePoster7 = document.createElement("img");
+        moviePoster7.setAttribute("src", response.Search[6].Poster)
+        moviePoster7.className = "movie-poster"
+        moviePoster7.setAttribute("data-id", response.Search[6].imdbID)
+        movieContainerSevenEl.appendChild(moviePoster7);
         
         // MOVIE Eight
-        var movieTitle8 = document.createElement("h4");
-        movieTitle8.textContent = "Title: " + response.Search[7].Title
-        movieContainerEightEl.appendChild(movieTitle8);
-
-        var movieYear8 = document.createElement("h4");
-        movieYear8.textContent = "Year: " + response.Search[7].Year
-        movieContainerEightEl.appendChild(movieYear8);
+        var moviePoster8 = document.createElement("img");
+        moviePoster8.setAttribute("src", response.Search[7].Poster)
+        moviePoster8.className = "movie-poster"
+        moviePoster8.setAttribute("data-id", response.Search[7].imdbID)
+        movieContainerEightEl.appendChild(moviePoster8);
     
         // MOVIE Nine
-        var movieTitle9 = document.createElement("h4");
-        movieTitle9.textContent = "Title: " + response.Search[8].Title
-        movieContainerNineEl.appendChild(movieTitle9);
-
-        var movieYear9 = document.createElement("h4");
-        movieYear9.textContent = "Year: " + response.Search[8].Year
-        movieContainerNineEl.appendChild(movieYear9);
+        var moviePoster9 = document.createElement("img");
+        moviePoster9.setAttribute("src", response.Search[8].Poster)
+        moviePoster9.className = "movie-poster"
+        moviePoster9.setAttribute("data-id", response.Search[8].imdbID)
+        movieContainerNineEl.appendChild(moviePoster9);
 
         //END MOVIE SEARCH RESULTS
     })
