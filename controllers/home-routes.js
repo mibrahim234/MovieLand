@@ -18,10 +18,10 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/dashboard', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/dashboard');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/dashboard');
+  //   return;
+  // }
 
   Post.findAll({
     attributes: [
@@ -80,13 +80,5 @@ router.get('/dashboard', (req, res) => {
   //   })
   // })
 
-  // router.get('/dashboard', (req, res) => {
-  //   if (req.session.loggedIn) {
-  //     res.redirect('/dashboard');
-  //     return;
-  //   }
-
-  //   res.render('dashboard');
-  // });
   
   module.exports = router;

@@ -12,21 +12,21 @@ const PORT = process.env.PORT || 3001;
 
 // NEED FOR DATABASE CONNECTION
 const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-// what is this for
+// Session Setup
 const sess = {
  secret: process.env.pluginsessionsecret,
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  //NEED FOR DATABASE CONNECTION
-/*   store: new SequelizeStore({
+  store: new SequelizeStore({
     db: sequelize
-   }) */
+   }) 
 };
 
 app.use(session(sess));
+
 //pushing up
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
