@@ -1,3 +1,24 @@
+<ol class="post-list">
+  {{#each posts}}
+  <li>
+    <article class="post">
+      <div class="title">
+        <a href="{{post_url}}" target="_blank">{{title}}</a>
+        <span>({{post_url}})</span>
+      </div>
+      <div class="meta">
+        {{vote_count}} point(s) by {{user.username}} on
+        {{created_at}}
+        |
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+      </div>
+    </article>
+  </li>
+  {{/each}}
+</ol>
+
+
+
 <section class="new-post">
   <div class="hero-body">
     <div class="post-form container mt-6">
@@ -26,7 +47,7 @@
    </div>
   </div>
   
-{{#if posts.length}}
+{{!-- {{#if posts.length}}
 <section class="your-posts">
   <h2>Your Posts</h2>
   <ol>
@@ -38,7 +59,7 @@
     {{/each}}
   </ol>
 </section>
-{{/if}}
+{{/if}} --}}
 
 <script src="/javascript/omdb.js"></script>
 {{!-- <script src="/javascript/add-post.js"></script> NEED TO IMPORT THIS SHEET STILL--}} 
