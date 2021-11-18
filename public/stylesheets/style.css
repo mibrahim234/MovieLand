@@ -5,6 +5,7 @@
 :root {
     --yellow: #fce138;
     --blue: #00008b;
+    --blue2: #024e76;
     --lblue: #39a6b2;
     --white: #fff;
   }
@@ -46,7 +47,9 @@ body {
 
 
 h1 {
- background-color: hsl(217, 71%, 53%);
+ background-color: var(--blue2);
+ font-size: 30px;
+
 }
 
 
