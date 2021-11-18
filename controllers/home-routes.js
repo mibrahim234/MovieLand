@@ -76,7 +76,17 @@ router.get('/dashboard', (req, res) => {
 
   //   axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
   //   .then(response => {
-  //     console.log(response)
+  //     console.log(response);
+
+    
+  //     var movieSelected = document.createElement("h4");
+  //     movieSelected.textContent = "Title: " + response.Title
+  //     movieContainerOneEl.appendChild(movieTitle);
+
+
+
+
+  //     res.render("movietemplate")
   //   })
   // })
 

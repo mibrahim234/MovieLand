@@ -1,3 +1,5 @@
+// const { response } = require("express");
+
 var userFormEl = document.querySelector("#user-form");
 var movieSearchInputEl = document.querySelector("#movie-search");
 
@@ -179,6 +181,8 @@ document.addEventListener("click", function(event) {
         const id = event.target.dataset.id
         // navigate to /movie/:id
         window.location.replace("/movie/" + id)
+
+        // response.render("movietemplate");
 
         // On our backend, we set up that dynamic route for /movie/:id
         // Make an API request to OMDB querying by req.params.id
