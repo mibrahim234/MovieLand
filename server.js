@@ -1,41 +1,47 @@
-const path = require('path');
 const express = require('express');
+const path = require('path');
 const session = require('express-session');
+// need for db connection
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const exphbs = require('express-handlebars');
+const sequelize = require('./config/connection');
 require('dotenv').config()
 const axios = require("axios")
 
+//Sets up the express app
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//NEED FOR DATABASE CONNECTION
-// const sequelize = require('./config/connection');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-// what is this for
+// Create a new sequelize store using the express-session package
 const sess = {
  secret: process.env.pluginsessionsecret,
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  //NEED FOR DATABASE CONNECTION
-/*   store: new SequelizeStore({
+ store: new SequelizeStore({
     db: sequelize
-   }) */
+   }) 
 };
 
 app.use(session(sess));
-//pushing up
-
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+// ^replace that with this 
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //NEED FOR DATABASE CONNECTION
-//app.use(require('./controllers/'));
+app.use(require('./controllers/'));
+
+//NEED FOR DATABASE CONNECTION
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
 
 app.get('/', (req, res) => {
  res.render('homepage')
@@ -91,11 +97,6 @@ app.get('/dashboard', (req, res) => {
 // If it doesn't find a table, it'll create it for you!
 
 
-
-//NEED FOR DATABASE CONNECTION
-// sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-// });
 
 
 

@@ -43,7 +43,7 @@ async function signupFormHandler(event) {
     if (response.ok) {
       document.location.replace('/home/');
     } else {
-      alert(response.statusText);
+      alert('Failed to Sign Up');
     }
   }
 }

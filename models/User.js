@@ -1,12 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const sequelize = require('../config/connection.js');
+const { beforeBulkCreate, beforeUpdate } = require('./Post.js');
+
 
 // create our User model
 class User extends Model {
     // set up method to run on instance data (per user) to check password
-    checkPassword(loginPw) {
-      return bcrypt.compareSync(loginPw, this.password);
+    validatePassword(inputPassword) {
+      return bcrypt.compareSync(inputPassword, this.password);
     }
   }
 
@@ -46,7 +48,7 @@ User.init(
         allowNull: false,
         validate: {
           // this means the password must be at least four characters long
-          len: [4]
+          len: [5]
         }
       }
     },
