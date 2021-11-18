@@ -8,29 +8,75 @@
       <link rel="stylesheet" href="/stylesheets/style.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
-
   </head>
 
   <body>
     <header>
-      <nav>
-        <div class= "title">
-        <a href='/'>Movie Land</a></div>
+     <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+      <h1>
+        <a class= "navbar-item" href='/'>Movie Land</a>
+        </h1>
+        </div>
+     
+
+    {{!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a> --}}
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+         <a class= "navbar-item" href='/'>Home</a>
+
+
+          <a class= "navbar-item" href="/dashboard">Dashboard</a>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+         <a class="button is-info" href="/login">Login </a>
+          <a class="button is-info btn-no-style" href="/">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+    </header>
+
+ {{!-- NAVBAR
+      <nav class= "navbar">
+
+        <div class= "navbar-brand">
+        <a  class= "navbar-item" href='/'>Movie Land</a>
+        </div>
       </h1>
 
-    <div class= "logs">
-          <a href='/'>Home</a>
-          <a href="/dashboard">Dashboard</a>
-          <a href="/login">Login</a>
-          <button id="logout" class="btn-no-style">logout</button>
+ <div class= "navbar-menu is-active">
+    <div class= "navbar-menu">
+        <div class="navbar-end">
+      <a class= "navbar-item" href='/'>Home</a>
+     <a class= "navbar-item" href="/dashboard">Dashboard</a>
+      <a class= "navbar-item" href="/login">Login</a>
+          <button id="logout" class="btn-no-style navbar-item">Logout</button>
         {{!-- change this later^ --}}
         </div>
-      </nav>
-    </header>
+        </div>
+        </div>
+      </nav> --}}
+
+
     <main>
       {{{body}}}
     </main>    
+
+{{!-- do we need JS script tag for login?? --}}
   <script src="/javascript/logout.js"></script>
   </body>
   </html>
