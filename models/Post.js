@@ -41,7 +41,7 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    description: {
+    review: {
       type: DataTypes.STRING,
       allowNull: false
     },

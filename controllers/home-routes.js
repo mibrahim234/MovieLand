@@ -16,9 +16,27 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-  // router.get('/dashboard', (req, res) => {
-  //   res.render('dashboard');
-  // });
+router.get('/dashboard', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('dashboard');
+});
+
+
+// router.get("/search/:searchTerm", (req, res) => {
+//   const searchTerm = req.params.searchTerm
+//   //query OMDB by the search term with axios
+//   // take the response and pass it into a Handlebars template
+//   // The template will either need to use a partial for each movie
+//   // Or you can use an each loop in the template
+//   // const dataObj = {movieList: ARRAY FROM RESPONSE}
+//   // res.render("SEARCHTEMPLATE", dataObj)
+// })
+
+
 
   // router.get("/movie/:id", (req, res) => {
   //   const imdbID = req.params.id
