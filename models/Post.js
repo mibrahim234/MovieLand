@@ -28,7 +28,7 @@ Post.init(
       allowNull: false,
       defaultValue: 'Movie Title Placeholder',
     },
-    review_content: {
+    movie_content: {
       type: DataTypes.TEXT,
       allowNull: false,
       defaultValue: 'Movie review Text Placeholder.',

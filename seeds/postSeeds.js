@@ -10,7 +10,7 @@ const postData = [
     {
         user_id: 2,
         post_title: 'The Avengers',
-        review_content: 'This film has everything you want in a team up super hero film from awesome action sequences to great characters but still has some noticeable flaws.',
+        movie_content: 'This film has everything you want in a team up super hero film from awesome action sequences to great characters but still has some noticeable flaws.',
     },
 ];
 
