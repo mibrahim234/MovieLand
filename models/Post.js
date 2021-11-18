@@ -26,7 +26,7 @@ Post.init(
     post_title: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'Blog Post Title Placeholder',
+      defaultValue: 'Movie Title Placeholder',
     },
     review_content: {
       type: DataTypes.TEXT,

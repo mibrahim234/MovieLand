@@ -1,5 +1,6 @@
-const router = require('express').Router();
 const { User } = require('../../models');
+const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 
 // get all users
 // Access our User model and run .findAll() method)
