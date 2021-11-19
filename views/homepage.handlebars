@@ -9,10 +9,11 @@
        <h1 class="text-center">Find A Movie <br>
        Leave A Review </h1>
 
+
        {{!-- Search Bar --}}
-          <form action="" class="box hide" id="user-form">
+          <form action="" class="box" id="user-form">
              <div class="field">
-              <label for="username-signup" class="label"></label>
+              <label for="search-bar" class="label"></label>
               <div class="control has-icons-left">
         <input class="input" name="movie-search" id="movie-search" type="text" autofocus="true" placeholder="Search For a Movie">
                 <span class="icon is-small is-left">
@@ -34,11 +35,10 @@
 </section>
 
 <section>
-  <div class="container mt-6">
+  <div class="container mt-6" id="movie-container">
     <div class="movie-search-results columns">
-      <!-- Need to insert posters of search results -->
-      <!-- <img id="movie-poster-one"></img> -->
-      <br>
+     
+      
       <div class="column">
         <div id="movie-container-one" ></div>
         <div id="movie-container-two" ></div>  
@@ -57,9 +57,7 @@
     </div> 
   </div> 
 </section>
-{{!-- meddage --}}
        <script src="/javascript/omdb.js"></script>
-{{!-- technology is lovely --}}
 </body>
 </html>
 
