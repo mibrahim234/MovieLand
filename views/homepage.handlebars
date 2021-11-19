@@ -1,0 +1,66 @@
+<body>
+  
+<section>
+  <div class="hero-body">
+    <div class="searchbar container mt-6">
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-5-desktop is-5-widescreen">
+          <div class="intro">    
+       <h1 class="text-center">Find A Movie <br>
+       Leave A Review </h1>
+
+       {{!-- Search Bar --}}
+          <form action="" class="box hide" id="user-form">
+             <div class="field">
+              <label for="username-signup" class="label"></label>
+              <div class="control has-icons-left">
+        <input class="input" name="movie-search" id="movie-search" type="text" autofocus="true" placeholder="Search For a Movie">
+                <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+                </span>
+              </div>
+            </div>
+              <div class="field">
+              <button type="submit" class="btn button is-info">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mt-6">
+    <div class="movie-search-results columns">
+      <!-- Need to insert posters of search results -->
+      <!-- <img id="movie-poster-one"></img> -->
+      <br>
+      <div class="column">
+        <div id="movie-container-one" ></div>
+        <div id="movie-container-two" ></div>  
+        <div id="movie-container-three" ></div>  
+      </div>
+      <div class="column">
+        <div id="movie-container-four" ></div>  
+        <div id="movie-container-five" ></div>    
+        <div id="movie-container-six" ></div>  
+      </div>
+      <div class="column">
+        <div id="movie-container-seven" ></div>  
+        <div id="movie-container-eight" ></div>  
+        <div id="movie-container-nine" ></div>
+      </div>
+    </div> 
+  </div> 
+</section>
+{{!-- meddage --}}
+       <script src="/javascript/omdb.js"></script>
+{{!-- technology is lovely --}}
+</body>
+</html>
+
+

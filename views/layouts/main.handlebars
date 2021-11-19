@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Land</title>
-</head>
-<body>
-     <h1>This is a site for movie reviews!</h1>
-     {{{body}}}
-</body>
-</html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Movie Land</title>
+      <link rel="stylesheet" href="/stylesheets/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+
+  <body>
+     <nav class="navbar" role="navigation" aria-label="main navigation">
+
+  <div class="navbar-brand">
+        <a class= "navbar-item movie" href='/'>Movie Land</a>
+        <a class= "navbar-item" href='/'>Home</a>
+        <a class= "navbar-item" href="/dashboard">Dashboard</a>
+        </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+         <a class="button is-info" href="/login">Login </a>
+          <a class="button is-info btn-no-style" href="/">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{!-- DO THE IF ELSE from handlebars, IF LOGGED IN SHOW THIS ELSE SHOW THIS  --}}
+    <main>
+      {{{body}}}
+    </main>    
+
+{{!-- do we need JS script tag for login?? --}}
+  <script src="/javascript/logout.js"></script>
+  </body>
+  </html>
