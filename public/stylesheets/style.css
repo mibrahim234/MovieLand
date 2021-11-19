@@ -4,7 +4,8 @@
 
 :root {
     --yellow: #fce138;
-    --blue: #024e76;
+    --blue: #00008b;
+    --blue2: #024e76;
     --lblue: #39a6b2;
     --white: #fff;
   }
@@ -21,7 +22,15 @@ body {
     align-items: center;
 }
 
-nav  {
+.navbar {
+    background-color: var(--blue);
+}
+
+.movie {
+    font-size: 30px;
+    color: var(--blue2);
+}
+/* nav  {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -35,23 +44,22 @@ nav  {
 
  .logs {
     position: absolute; top: 10px; right: 10px;
- }
+ } */
 
 .intro {
     position: relative; top: 100px;
     font-size: 30px;
-    color: black;
-    text-align: center;
+    color: white;
+    text-align: center; 
 }
 
-.intro h3 {
-    font-size: 25px;
-}
 
 h1 {
-    color: #00008b;
-    font-size: large;
+ background-color: var(--blue2);
+ font-size: 30px;
+
 }
+
 
 /* puts in colomns of 3
 each movie in its own box */
