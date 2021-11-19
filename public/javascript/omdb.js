@@ -31,7 +31,7 @@ var formSubmitHandler = function(event) {
 
 var getMovieData = function(movie) {
     // format the OMDB API URL
-    var omdbApiUrl = "http://www.omdbapi.com/?s=" + movie + "&apikey=83d6dc1f"
+    var omdbApiUrl = "https://www.omdbapi.com/?s=" + movie + "&apikey=83d6dc1f"
 
     // make a request to the OMDB API URL
     // fetch(`movies/${search}`, {

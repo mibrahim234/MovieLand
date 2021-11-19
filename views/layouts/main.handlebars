@@ -8,29 +8,36 @@
       <link rel="stylesheet" href="/stylesheets/style.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-
-
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class= "title">
-        <a href='/'>Movie Land</a></div>
-      </h1>
+     <nav class="navbar" role="navigation" aria-label="main navigation">
 
-    <div class= "logs">
-          <a href='/'>Home</a>
-          <a href="/dashboard">Dashboard</a>
-          <a href="/login">Login</a>
-          <button id="logout" class="btn-no-style">logout</button>
-        {{!-- change this later^ --}}
+  <div class="navbar-brand">
+        <a class= "navbar-item movie" href='/'>Movie Land</a>
+        <a class= "navbar-item" href='/'>Home</a>
+        <a class= "navbar-item" href="/dashboard">Dashboard</a>
         </div>
-      </nav>
-    </header>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+         <a class="button is-info" href="/login">Login </a>
+          <a class="button is-info btn-no-style" id="logout" href="/">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+{{!-- DO THE IF ELSE from handlebars, IF LOGGED IN SHOW THIS ELSE SHOW THIS  --}}
     <main>
       {{{body}}}
     </main>    
+
+{{!-- do we need JS script tag for login?? --}}
   <script src="/javascript/logout.js"></script>
   </body>
   </html>
