@@ -48,6 +48,17 @@ body {
     position: absolute; top: 10px; right: 10px;
  } */
 
+ /* Responsiveness to the movies */
+  #movie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--gray);
+    font-size: 26px;
+    padding-top: 20px;
+}  
+
 .intro {
     position: relative; top: 100px;
     font-size: 30px;
@@ -61,21 +72,7 @@ h1 {
  font-size: 30px;
 
 }
-
-
-/* puts in colomns of 3
-each movie in its own box */
-.movie-container {
-    background-color: gray;
-} 
 /* position: relative; top: 100px; left: 50px; */
-
-/* --MOVIE SEARCH RESULTS--
-.movie-search-results {
-    color: black;
-    display: flex;
-    flex-wrap: wrap;
-}   */
 
 /* --FOR THE DASHBOARD--
 .new-post {
@@ -83,14 +80,3 @@ each movie in its own box */
     color: black;
 } */
 
-
-
-/* --WHAT DOES THIS DO?--
-.selection-lists {
-    position: relative; top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    color: black;
-} 
- */
