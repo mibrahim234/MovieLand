@@ -60,10 +60,12 @@ each movie in its own box */
 } 
 /* position: relative; top: 100px; left: 50px; */
 
-/* --MOVIE SEARCH RESULTS-- */
+/* --MOVIE SEARCH RESULTS--
 .movie-search-results {
     color: black;
-}  
+    display: flex;
+    flex-wrap: wrap;
+}   */
 
 /* --FOR THE DASHBOARD--
 .new-post {

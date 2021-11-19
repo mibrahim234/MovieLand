@@ -1,3 +1,6 @@
+// const { Json } = require("sequelize/types/lib/utils");
+// const { get } = require("../../controllers/home-routes");
+
 var userFormEl = document.querySelector("#user-form");
 var movieSearchInputEl = document.querySelector("#movie-search");
 
@@ -18,6 +21,7 @@ var formSubmitHandler = function(event) {
     var movie = movieSearchInputEl.value.trim();
 
     if (movie) {
+        // window.location.replace("/moviessearch/" + movie)
         getMovieData(movie);
         movieSearchInputEl = "";
     } else {
@@ -30,6 +34,12 @@ var getMovieData = function(movie) {
     var omdbApiUrl = "http://www.omdbapi.com/?s=" + movie + "&apikey=83d6dc1f"
 
     // make a request to the OMDB API URL
+    // fetch(`movies/${search}`, {
+    //     method: 'GET',
+    //     body: JSON.stringify({
+
+    //     })
+    // })
     fetch(omdbApiUrl)
         .then(function(response) {
         return response.json();
