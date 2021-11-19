@@ -12,7 +12,7 @@
 - [Test Instructions](#test-instructions)
 
 ### Description
-This a group project that is done by implementing front-end and back-end. The application is called Movie Land. This app allows for a user to login and logout with their own credentials and be able to search movies and write a review for that respective movie. 
+This a group project that is done by implementing the front-end and back-end. The application is called Movie Land. This app allows for a user to login and logout with their own credentials and be able to search movies and write a review for that respective movie. 
 
 ----
 ### Installation
