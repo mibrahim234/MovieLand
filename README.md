@@ -10,17 +10,13 @@
 - [Usage](#usage)
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
-- [Questions](#questions)
-
-----
 
 ### Description
-This application allows for a user to login and write reviews for a movie of their choice. This application was built using Node.js, Sequelize, Handlebar.js etc... Users that are logged in can view all of their reviews from the dashboard, and even if the user logs out, it will be saved for the next time they choose to log back in.
+This a group project that is done by implementing front-end and back-end. The application is called Movie Land. This app allows for a user to login and logout with their own credentials and be able to search movies and write a review for that respective movie. 
 
-![Gif Demo](./gif.gif)
 ----
 ### Installation
-🔧Axios, Connect-Session-Sequelize, Dotenv, Express, Express-Handlebars, Express session, MySQL2, Sequelize, Validator 
+🔧 Node.js, Axios, Connect-Session-Sequelize, Dotenv, Express, Express-Handlebars, Express session, MySQL2, Sequelize, Validator 
 
 ----
 ### Usage
@@ -29,7 +25,7 @@ This application allows for a user to login and write reviews for a movie of the
 ----
 ### License
 ✅<a href="https://img.shields.io/badge/License-MIT License-blueviolet"><img src="https://img.shields.io/badge/License-MIT License-blueviolet"></a>
-This application is covered by the MIT License license.
+This application is covered by the MIT License.
 ----
 
 ### Contributing
@@ -41,9 +37,9 @@ None
 
 ----
 ### Questions
-💻Find me on GitHub: [Github Profile](https://github.com/Kurdiamina3, Mibrahim234, Maxwillner)
+💻Find us on GitHub: [Github Profiles](https://github.com/Kurdiamina3, https://github.com/Mibrahim234, https://github.com/Maxwillner)
 <br />
-📧Email me with any questions: kurdiamina3@gmail.com, mohamm1417@gmail.com, max.a.wilner@gmail.com 
+📧Email us with any questions: kurdiamina3@gmail.com, mohamm1417@gmail.com, max.a.willner@gmail.com 
 <br />
 
 🌟_This README was generated with 💓 by [README-generator] (https://github.com/kurdiamina3/README-generator)🌟
