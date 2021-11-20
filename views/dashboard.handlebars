@@ -1,10 +1,14 @@
-<ol class="post-list">
+<div class="individual-movie container mt-6" id="review-page" >
+      <div class="columns is-centered">
+        <div class="column is-5-tablet is-5-desktop is-5-widescreen">
+
+<ol class="post-list column">
   {{#each posts}}
   <li>
     <article class="post">
       <div class="title">
-        <h3>{{title}}</h3>
-        <h4>{{review}}</h4>
+        <h2>{{title}}</h2>
+        <h3>{{review}} by {{user_id}}</h3>
       </div>
       <div class="meta">
       </div>
@@ -12,7 +16,9 @@
   </li>
   {{/each}}
 </ol>
-
+ </div>
+  </div>
+</div>
 
 
 <section class="new-post">
@@ -22,7 +28,8 @@
         <div class="column is-4-tablet is-4-desktop is-5-widescreen">
   <form class="box new-post-form">
   <div class="field">
-      <h1><b>Create New Post</b></h1>
+
+          <label class="newpost">Create New Post</label>
     <label class="label">Title</label>
     <div class="control">
       <input class="input" type="text" id="title" name="title" placeholder="Enter a title">

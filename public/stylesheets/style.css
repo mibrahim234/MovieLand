@@ -65,6 +65,15 @@ body {
 
 .individual-movie {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 26px;
+    padding-top: 60px;
+}
+
+#review-page {
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -77,6 +86,25 @@ h1 {
  font-size: 30px;
 }
 
+h2 {
+    background-color: var(--blue2);
+    font-size: 30px;
+    text-align: center;
+    color: var(--white);
+   }
+
+   h3 {
+    background-color: var(--white);
+    font-size: 30px;
+    text-align: start; 
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+/* Dashboard-CREATE NEW POST */
+.newpost {
+    font-size: 25px;
+    font-weight: bold;
+}
 /* OLD NAV BAR */
 /* nav  {
     display: flex;

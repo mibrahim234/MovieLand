@@ -78,7 +78,7 @@ router.get("/:id", (req, res) => {
         });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         review: req.body.review,
