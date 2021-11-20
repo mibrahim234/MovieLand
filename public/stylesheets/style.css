@@ -65,14 +65,15 @@ body {
 
 .individual-movie {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-size: 26px;
     padding-top: 60px;
 }
 
-#review-page {
+/* FOR MOVIE REVIEWS */
+.review-page {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -86,6 +87,7 @@ h1 {
  font-size: 30px;
 }
 
+/* H2 AND H3 ARE FOR DASHBOARD */
 h2 {
     background-color: var(--blue2);
     font-size: 30px;
