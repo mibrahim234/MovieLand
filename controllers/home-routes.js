@@ -62,7 +62,7 @@ router.get('/dashboard', (req, res) => {
 router.get("/search/:searchTerm", (req, res) => {
   const searchTerm = req.params.searchTerm
 
-  var omdbApiUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&apikey=83d6dc1f"
+  var omdbApiUrl = "https://www.omdbapi.com/?s=" + searchTerm + "&apikey=83d6dc1f"
 
   //query OMDB by the search term with axios
   axios.get(omdbApiUrl)
@@ -81,7 +81,7 @@ router.get("/search/:searchTerm", (req, res) => {
   router.get("/movie/:id", (req, res) => {
     const imdbID = req.params.id
 
-    axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
+    axios.get(`https//www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
     .then(response => {
   //  get data from omdb and store it
   //  pull out needed content ex(director, descriptions, etc)
