@@ -1,40 +1,31 @@
 const router = require ("express").Router();
-const { Post, User, Vote, Comment } = require("../../models");
+const { Post, User } = require("../../models");
 const sequelize = require("../../config/connection.js");
-const withAuth = require("../../utils/auth.js")
+const userAuth = require("../../utils/auth.js")
 
 // get all posts 
 router.get("/", (req, res) => {
     Post.findAll({
         attributes: [
-            "id",
-            "title",
-            "review", 
-            "created_at",
-            // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
-            // 'vote_count']
+            'id',
+            'title',
+            'creator_id',
+            'review',
+            'created_at'
         ],
-        order: [["created_at", "DESC"]],
-        include: [
-            // {
-            //     model: Comment,
-            //     attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-            //     include: {
-            //         model: User,
-            //         attributes: ["username"]
-            //     }
-            // },
+        include: [ 
             {
-                model: User,
-                attributes: ["username"]
-            }
-        ]
+              model: User,
+              attributes: ['username']
+            },
+        ],
+        oder: [['created_at', 'DESC']]
     })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+    .then(postData => res.json(postData))
+    .catch(err => {
+        console.log (err);
+        res.status(500).json(err);
+    });
 });
 
 router.get("/:id", (req, res) => {
@@ -46,70 +37,55 @@ router.get("/:id", (req, res) => {
             "id",
             "title",
             "review", 
-            "created_at",
-            // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
-            // 'vote_count']
+            "creator_id",
+            "created_at"
         ],
         include: [
-            // {
-            //     model: Comment,
-            //     attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-            //     include: {
-            //         model: User,
-            //         attributes: ["username"]
-            //     }
-            // },
             {
                 model: User,
-                attributes: ["username"]
+                attributes: ['username']
+            },
+            {
+                model: Post,
+                attributes: [
+                    'review', 'user_id', 'reiew_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username'],
+                }
             }
         ]
     })
         .then(dbPostData => {
             if(!dbPostData) {
-                res.status(400).json({ message: "No post found with this id" });
-                return;
+                res.status(404).json({ message: "We couldnt find that review post!"});
             }
-            res.json(dbPostData);
+            res.json(postData);
         })
-        .catch(err => {
-            console.log(err);
-            res.json(500).json(err);
-        });
-});
-
-router.post("/", (req, res) => {
-    Post.create({
-        title: req.body.title,
-        review: req.body.review,
-        user_id: req.body.user_id
-    })
-        .then(dbPostData => res.json(dbPostData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
 
-// // PUT /api/posts/upvote
-// router.put("/upvote", withAuth, (req, res) => {
+router.post('/', userAuth, (req, res) => {
+    Post.create({
+        title: req.body.title,
+        review: req.review.title,
+        creator_id: req.session.user_id
+    })
+    .then(postData => res.json(blogData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
-//     // make sure the session exists first
-//     if (req.session) {
-//         // pass session id along with all destructured properties on req.body
-//         Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-//             .then(updatedVoteData => res.json(updatedVoteData))
-//             .catch(err => {
-//                 console.log(err);
-//                 res.status(500).json(err);
-//             });
-//     }
-// });
-
-router.put("/:id", (req, res) => {
+router.put("/", async (req, res) => {
     Post.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            review: req.body.review
         },
         {
             where: {
@@ -130,7 +106,7 @@ router.put("/:id", (req, res) => {
         });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", userAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id 
