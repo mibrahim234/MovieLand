@@ -12,7 +12,6 @@
 
 body {
     background-image: url(../assets/movie1.jpg);
-    background-color: var(--blue);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -24,14 +23,18 @@ body {
 /* TITLE */
 .movie {
     font-size: 30px;
-    color: var(--blue2);
+    color: var(--white);
 }
 
 /* Home, Dashboard */
 .home, .dashy {
     font-size: 20px; 
+    color: var(--white);
 }
 
+.ryan {
+    position: fixed;
+}
 /* Responsiveness to the movies */
 #movie-container {
     display: flex;
