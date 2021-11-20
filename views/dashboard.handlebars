@@ -20,7 +20,7 @@
   </div>
 </div>
 
-
+{{#if loggedIn}}
 <section class="new-post">
   <div class="hero-body">
     <div class="post-form container mt-6">
@@ -49,7 +49,8 @@
   </div>
    </div>
   </div>
-  
+{{/if}}
+
 {{!-- {{#if posts.length}}
 <section class="your-posts">
   <h2>Your Posts</h2>
@@ -65,5 +66,7 @@
 {{/if}} --}}
 
 {{!-- <script src="/javascript/omdb.js"></script> --}}
+{{#if loggedIn}}
 <script src="/javascript/add-post.js"></script> 
 {{!-- nice post man! --}}
+{{/if}}
