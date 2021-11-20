@@ -11,19 +11,20 @@
   </head>
 
   <body>
+    <section class="color"> 
      <nav class="navbar" role="navigation" aria-label="main navigation">
 
   <div class="navbar-brand">
         <a class= "navbar-item movie" href='/'>Movie Land</a>
-        <a class= "navbar-item" href='/'>Home</a>
-        <a class= "navbar-item" href="/dashboard">Dashboard</a>
+        <a class= "navbar-item home" href='/'>Home</a>
+        <a class= "navbar-item dashy" href="/dashboard">Dashboard</a>
         </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-         <a class="button is-info" href="/login">Login </a>
-          <a class="button is-info btn-no-style" href="/">
+         <a class="button is-info ryan" href="/login">Login </a>
+          <a class="button is-info btn-no-style ryan" id="logout" href="/">
             Logout
           </a>
         </div>
@@ -31,7 +32,7 @@
     </div>
   </div>
 </nav>
-
+</section>
 {{!-- DO THE IF ELSE from handlebars, IF LOGGED IN SHOW THIS ELSE SHOW THIS  --}}
     <main>
       {{{body}}}

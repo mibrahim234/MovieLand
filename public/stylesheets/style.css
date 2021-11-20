@@ -12,24 +12,102 @@
 
 body {
     background-image: url(../assets/movie1.jpg);
-    background-color: var(--blue);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     width: 100vw;
     min-height: 100vh;
-    padding: 0;
-    margin:0px;
-    justify-content: center;
-    align-items: center;
 }
 
-.navbar {
-    background-color: var(--blue);
-}
-
+/* TITLE */
 .movie {
     font-size: 30px;
-    color: var(--blue2);
+    color: var(--white);
 }
+
+/* Home, Dashboard */
+.home, .dashy {
+    font-size: 20px; 
+    color: var(--white);
+}
+
+.ryan {
+    position: fixed;
+}
+/* Responsiveness to the movies */
+#movie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--gray);
+    font-size: 26px;
+    padding-top: 60px;
+}    
+
+
+
+/* FIND A MOVIE, LEAVE A REVIEW (HOMEPAGE) */
+.intro {
+    position: relative; top: 100px;
+    font-size: 30px;
+    color: white;
+    text-align: center; 
+}
+
+/* movie details (individual moviepg) */
+.intro1 {
+    font-size: 20px;
+    color: white;
+    background-color: var(--blue2);
+} 
+
+.individual-movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 26px;
+    padding-top: 60px;
+}
+
+/* FOR MOVIE REVIEWS */
+.review-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 26px;
+    padding-top: 60px;
+}
+
+h1 {
+ background-color: var(--blue2);
+ font-size: 30px;
+}
+
+/* H2 AND H3 ARE FOR DASHBOARD */
+h2 {
+    background-color: var(--blue2);
+    font-size: 30px;
+    text-align: center;
+    color: var(--white);
+   }
+
+   h3 {
+    background-color: var(--white);
+    font-size: 30px;
+    text-align: start; 
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+/* Dashboard-CREATE NEW POST */
+.newpost {
+    font-size: 25px;
+    font-weight: bold;
+}
+/* OLD NAV BAR */
 /* nav  {
     display: flex;
     flex-wrap: wrap;
@@ -46,47 +124,3 @@ body {
     position: absolute; top: 10px; right: 10px;
  } */
 
-.intro {
-    position: relative; top: 100px;
-    font-size: 30px;
-    color: white;
-    text-align: center; 
-}
-
-
-h1 {
- background-color: var(--blue2);
- font-size: 30px;
-
-}
-
-
-/* puts in colomns of 3
-each movie in its own box */
-.movie-container {
-    background-color: gray;
-} 
-/* position: relative; top: 100px; left: 50px; */
-
-/* --MOVIE SEARCH RESULTS-- */
-.movie-search-results {
-    color: black;
-}  
-
-/* --FOR THE DASHBOARD--
-.new-post {
-    position: relative; top: 200px; left: 15px;
-    color: black;
-} */
-
-
-
-/* --WHAT DOES THIS DO?--
-.selection-lists {
-    position: relative; top: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    color: black;
-} 
- */

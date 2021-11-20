@@ -50,7 +50,7 @@ router.get('/dashboard', (req, res) => {
       // pass a single post object into the homepage template
       // console.log(dbPostData[0]);
       const posts = dbPostData.map(post => post.get({ plain: true }))
-      res.render('dashboard', { posts });
+      res.render('dashboard', { posts, loggedIn: req.session.loggedIn });
     })
     .catch(err => {
       console.log(err);
@@ -59,26 +59,39 @@ router.get('/dashboard', (req, res) => {
 });
 
 
-// router.get("/search/:searchTerm", (req, res) => {
-//   const searchTerm = req.params.searchTerm
-//   //query OMDB by the search term with axios
-//   // take the response and pass it into a Handlebars template
-//   // The template will either need to use a partial for each movie
-//   // Or you can use an each loop in the template
-//   // const dataObj = {movieList: ARRAY FROM RESPONSE}
-//   // res.render("SEARCHTEMPLATE", dataObj)
-// })
+router.get("/search/:searchTerm", (req, res) => {
+  const searchTerm = req.params.searchTerm
+
+  var omdbApiUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&apikey=83d6dc1f"
+
+  //query OMDB by the search term with axios
+  axios.get(omdbApiUrl)
+  .then(data => {
+
+  })
+  // take the response and pass it into a Handlebars template
+  // The template will either need to use a partial for each movie
+  // Or you can use an each loop in the template
+  // const dataObj = {movieList: ARRAY FROM RESPONSE}
+  // res.render("SEARCHTEMPLATE", dataObj)
+})
 
 
 
-  // router.get("/movie/:id", (req, res) => {
-  //   const imdbID = req.params.id
+  router.get("/movie/:id", (req, res) => {
+    const imdbID = req.params.id
 
-  //   axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
-  //   .then(response => {
-  //     console.log(response)
-  //   })
-  // })
+    axios.get(`http://www.omdbapi.com?apikey=${process.env.omdb_api}&i=${imdbID}`)
+    .then(response => {
+  //  get data from omdb and store it
+  //  pull out needed content ex(director, descriptions, etc)
+  //  render the page
+      console.log(response);
+      let movie = response.data
+
+      res.render("individualmovie", movie);
+    })
+  })
 
   
   module.exports = router;
