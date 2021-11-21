@@ -10,7 +10,7 @@
 - [Usage](#usage)
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
-- [Questions](#questions)git
+- [Questions](#questions)
 
 ----
 
@@ -24,8 +24,8 @@ Application is deployed on Heroku, [click here.](https://thebettermovieland.hero
 ![screenshot1](/1.png)
 ![screenshot1](/2.png)
 ![screenshot1](/2.png)
-[before login](https://watch.screencastify.com/v/uD0ZPIo2lMjCjZvMYNBS)
-[after login](https://watch.screencastify.com/v/6uy8E6sjE7wXgRZ2RVBK)
+[Before login](https://watch.screencastify.com/v/uD0ZPIo2lMjCjZvMYNBS)
+[After login](https://watch.screencastify.com/v/6uy8E6sjE7wXgRZ2RVBK)
 
 ----
 ### Installation
