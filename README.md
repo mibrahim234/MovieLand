@@ -10,7 +10,7 @@
 - [Usage](#usage)
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
-- [Questions](#questions)gi
+- [Questions](#questions)git
 
 ----
 
