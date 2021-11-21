@@ -10,14 +10,23 @@
 - [Usage](#usage)
 - [Contribution](#contribution)
 - [Test Instructions](#test-instructions)
-- [Questions](#questions)
+- [Questions](#questions)gi
 
 ----
 
 ### Description
 This application allows for a user to login and write reviews for a movie of their choice. This application was built using Node.js, Sequelize, Handlebar.js etc... Users that are logged in can view all of their reviews from the dashboard, and even if the user logs out, it will be saved for the next time they choose to log back in.
 
-![Gif Demo](./gif.gif)
+Application is deployed on Heroku, [click here.](https://thebettermovieland.herokuapp.com/)
+
+#### Screenshots and Demo Links
+
+![screenshot1](/1.png)
+![screenshot1](/2.png)
+![screenshot1](/2.png)
+[before login](https://watch.screencastify.com/v/uD0ZPIo2lMjCjZvMYNBS)
+[after login](https://watch.screencastify.com/v/6uy8E6sjE7wXgRZ2RVBK)
+
 ----
 ### Installation
 🔧Axios, Connect-Session-Sequelize, Dotenv, Express, Express-Handlebars, Express session, MySQL2, Sequelize, Validator 
